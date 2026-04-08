@@ -158,6 +158,18 @@ p {
     transform: scale(1.05);
 }
 
+.footer {
+    background: #cae1ff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
 /* --- Responsive Mobile Fixes --- */
 @media (max-width: 768px) {
     .about-container {
