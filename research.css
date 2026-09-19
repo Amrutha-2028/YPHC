@@ -1,15 +1,25 @@
+
 /* --- Global Overrides --- */
+
 body {
     margin: 0;
-    font-family: "Alice", serif; /* Headings font */
+    font-family: "Alice", serif;
     background: #efeded;
     color: #333;
 }
 
-h1, h2, h3 { font-family: "Alice", serif; margin: 0; }
-p, span, a, div { font-family: 'Inter', sans-serif; }
+h1, h2, h3 {
+    font-family: "Alice", serif;
+    margin: 0;
+}
+
+p, span, a, div {
+    font-family: "Inter", sans-serif;
+}
+
 
 /* --- Header --- */
+
 .research-header {
     padding: 100px 20px 60px;
     background: white;
@@ -33,7 +43,9 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
     margin-bottom: 10px;
 }
 
+
 /* --- Research Grid --- */
+
 .research-container {
     padding: 60px 20px;
     max-width: 1200px;
@@ -45,6 +57,9 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 40px;
 }
+
+
+/* --- Individual Paper Card --- */
 
 .paper-card {
     background: white;
@@ -58,16 +73,31 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
 }
 
 .paper-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
+.paper-card:focus-visible {
+    outline: 3px solid #0047ab;
+    outline-offset: 4px;
+}
+
+
+/* --- Front Card Image --- */
 
 .flyer-preview {
     height: 220px;
+    width: 100%;
+    flex-shrink: 0;
+
     background-color: #cae1ff;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
+
+
+/* --- Card Text --- */
 
 .paper-info {
     padding: 25px;
@@ -91,80 +121,133 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
 .team-mini {
     font-size: 0.9rem;
     color: #777;
+    line-height: 1.5;
 }
 
-/* --- Modal Styling --- */
+
+/* --- Modal Background --- */
+
 .modal {
     display: none;
     position: fixed;
     z-index: 9999;
     left: 0;
     top: 0;
+
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.85);
+
+    background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
+
     overflow-y: auto;
+    box-sizing: border-box;
 }
+
+
+/* --- Modal Content --- */
 
 .modal-content {
     background-color: #fff;
-    margin: 5vh auto; /* Responsive top margin */
+
+    margin: 5vh auto;
     padding: 0;
+
     border-radius: 25px;
+
     width: 90%;
     max-width: 900px;
+
     position: relative;
-    max-height: 90vh; /* Prevents card from going off-screen */
-    overflow-y: auto; /* Allows scrolling inside the card on small phones */
+
+    max-height: 90vh;
+    overflow-y: auto;
+
     animation: slideUp 0.4s ease-out;
+    box-sizing: border-box;
 }
 
 @keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
+
+
+/* --- Close Button --- */
 
 .close {
     position: absolute;
     right: 15px;
     top: 15px;
+
     width: 45px;
     height: 45px;
+
     background: white;
+    border: none;
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 28px;
     color: #333;
-    z-index: 100; /* Stays on top of everything */
+
+    z-index: 100;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.2s;
 }
 
-.close:active { transform: scale(0.9); background: #eee; }
+.close:hover {
+    background: #eee;
+}
 
-/* --- Mobile-First Modal Body --- */
+.close:active {
+    transform: scale(0.9);
+}
+
+
+/* --- Modal Body --- */
+
 .modal-body {
     display: flex;
-    flex-direction: row; /* Desktop default */
+    flex-direction: row;
+    align-items: stretch;
 }
+
+
+/* --- Modal Image --- */
 
 .modal-flyer {
     flex: 1;
-    min-width: 350px;
+    min-width: 0;
     min-height: 500px;
-    background: #cae1ff;
-    background-size: cover;
+
+    background-color: #cae1ff;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
+
+
+/* --- Modal Text --- */
 
 .modal-text {
     flex: 1.2;
-    min-width: 350px;
+    min-width: 0;
     padding: 50px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
 }
 
 .modal-text h2 {
@@ -172,34 +255,66 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
     margin-bottom: 15px;
 }
 
+.modal-text hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}
+
+
+/* --- View Paper Button --- */
+
 .view-paper-btn {
     display: inline-block;
+
     margin-top: 30px;
     padding: 18px 35px;
+
     background: #000;
     color: white;
+
     text-decoration: none;
+    text-align: center;
+
     border-radius: 50px;
     font-weight: 700;
+
     transition: 0.3s;
 }
 
-.view-paper-btn:hover { background: #0047ab; }
+.view-paper-btn:hover {
+    background: #0047ab;
+}
+
+
+/* --- Tablet and Mobile --- */
 
 @media (max-width: 800px) {
+
+    .research-container {
+        padding: 40px 20px;
+    }
+
+    .research-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
     .modal-body {
-        flex-direction: column; /* Stacks image on top of text on phones */
+        flex-direction: column;
     }
 
     .modal-flyer {
-        min-width: 100%;
-        min-height: 300px; /* Shorter image on mobile */
+        width: 100%;
+        min-width: 0;
+        min-height: 300px;
         height: 300px;
+        flex: none;
     }
 
     .modal-text {
         padding: 30px 20px;
-        min-width: 100%;
+        min-width: 0;
         text-align: center;
     }
 
@@ -208,7 +323,36 @@ p, span, a, div { font-family: 'Inter', sans-serif; }
     }
 
     .view-paper-btn {
-        width: 100%; /* Full width button is easier to tap */
+        width: 100%;
         box-sizing: border-box;
+    }
+}
+
+
+/* --- Small Phones --- */
+
+@media (max-width: 400px) {
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-container {
+        padding: 30px 15px;
+    }
+
+    .modal-content {
+        width: 94%;
+        margin: 3vh auto;
+        max-height: 94vh;
+    }
+
+    .modal-flyer {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .modal-text {
+        padding: 25px 18px;
     }
 }
