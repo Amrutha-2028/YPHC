@@ -31,7 +31,21 @@ const paperData = {
         link: "https://drive.google.com/file/d/1bI0IUIog9u75D2QlIUUZhYH1z23HRQ6r/view?usp=sharing",
 
         
+    },
+       paper3: {
+        title: "Why are certain neurons selectively vulnerable in neurodegenerative diseases?",
+
+        leader: "Annapoorani Ravikumar and Shomili Joshi ",
+
+        team: "Andreea Marina Brasoveanu, Annanya Gupta, Ruth Maria Sijo",
+
+        desc: "This paper explores why certain neurons are selectively vulnerable in neurodegenerative diseases such as Parkinson’s disease. It looks at the structure and connectivity of neurons and how their specialised features may contribute to their vulnerability. The paper also considers different factors that can damage neurons and reviews current research into why some neurons are affected more than others.",
+
+        link: "https://drive.google.com/file/d/1cqfWQpW7ru-SjFG2yoWTSUzRmiCbmVzS/view?usp=sharing",
+
+        
     }
+   
 
 
     /*
